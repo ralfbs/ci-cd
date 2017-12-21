@@ -1,0 +1,15 @@
+---
+- hosts: gitlab
+
+  gather_facts: False
+  pre_tasks:
+    - name: Make sure phyton is installed for Ansible (required for e.g. Ubuntu 16.4)
+      raw: sudo bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)"
+      changed_when: False
+    - setup: # aka gather_facts
+
+  become: yes
+
+  roles:
+  - common
+  - geerlingguy.gitlab

@@ -1,0 +1,7 @@
+---
+locale: de_DE.UTF-8
+common_packages:
+  - git
+  - curl
+  - zip
+  - ntp

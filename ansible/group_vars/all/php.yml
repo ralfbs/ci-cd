@@ -1,0 +1,44 @@
+php_version: 5.6
+
+php_memory_limit: "512M"
+php_max_execution_time: "240"
+php_max_input_vars: "1500"
+always_populate_raw_post_data: -1
+php_upload_max_filesize: "256M"
+php_post_max_size: "256M"
+
+
+php_date_timezone: "Europe/Berlin"
+
+php_packages:
+  - php{{php_version}}-apcu
+  - php{{php_version}}-common
+  - php{{php_version}}-intl
+  - php{{php_version}}-cli
+  - php{{php_version}}-dev
+  - php{{php_version}}-fpm
+  - php{{php_version}}-gd
+  - php{{php_version}}-curl
+  - php{{php_version}}-imap
+  - php{{php_version}}-json
+  - php-mbstring
+  - php{{php_version}}-mcrypt
+  - php{{php_version}}-opcache
+  - php{{php_version}}-pdo
+  - php{{php_version}}-xml
+  - php{{php_version}}-mbstring
+  - php{{php_version}}-zip
+  - php{{php_version}}-soap
+  - php{{ php_version }}-imagick
+
+php_mysql_package: php{{php_version}}-mysql
+
+php_conf_paths:
+  - /etc/php/{{php_version}}/fpm
+  - /etc/php/{{php_version}}/apache2
+  - /etc/php/{{php_version}}/cli
+
+php_extension_conf_paths:
+  - /etc/php/{{php_version}}/fpm/conf.d
+  - /etc/php/{{php_version}}/apache2/conf.d
+  - /etc/php/{{php_version}}/cli/conf.d

@@ -1,0 +1,2 @@
+---
+php_sendmail_path: "{{ mailhog_install_dir }}/mhsendmail"

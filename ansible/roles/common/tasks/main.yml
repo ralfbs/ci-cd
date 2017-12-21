@@ -1,0 +1,32 @@
+- name: Ensure hostname set
+  hostname: name={{ inventory_hostname }}
+  when: not inventory_hostname|match('(\d{1,3}\.){3}\d{1,3}')
+
+- name: Ensure hostname is in /etc/hosts
+  lineinfile:
+    dest=/etc/hosts
+    regexp="^{{ ansible_default_ipv4.address }}.+$"
+    line="{{ ansible_default_ipv4.address }} {{ ansible_fqdn }} {{ ansible_hostname }}"
+
+- name: install the locales package
+  apt: pkg=locales state=present
+
+- name: ensure the locale exists
+  command: /usr/sbin/locale-gen {{ locale }}
+  become: true
+
+- name: set the locale
+  command: /usr/sbin/update-locale LANG={{ locale }} --reset
+  become: true
+
+- name: install packages
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items: "{{ common_packages }}"
+
+- name: Ensure ssh-key exists
+  shell: ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
+  args:
+    creates: ~/.ssh/id_rsa
+
+
+

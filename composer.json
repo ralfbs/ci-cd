@@ -1,0 +1,25 @@
+{
+  "name": "RalfSchneider/CI-Beispiel",
+  "description": "",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Ralf Schneider",
+      "email": "ralf.schneider@tsitrone.de",
+      "role": "CTO"
+    }
+  ],
+  "config": {
+    "secure-http": false
+  },
+  "repositories": [
+
+  ],
+  "require": {
+
+  },
+  "require-dev": {
+    "deployer/deployer": "^4.3",
+    "deployphp/recipes": "^6.0"
+  }
+}

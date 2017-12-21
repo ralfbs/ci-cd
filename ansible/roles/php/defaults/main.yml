@@ -1,0 +1,36 @@
+---
+
+php_modules:
+  - php{{ php_version }}-mbstring
+  - php{{ php_version }}-json
+  - php{{ php_version }}-opcache
+  - php{{ php_version }}-curl
+  - php{{ php_version }}-mcrypt
+  - php{{ php_version }}-intl
+  - php{{ php_version }}-imagick
+  - php{{ php_version }}-gd
+  - php{{ php_version }}-soap
+  - php{{ php_version }}-xsl
+
+php_configs: [
+    {
+        option: "display_startup_errors",
+        value: "On"
+    },
+    {
+        option: "display_errors",
+        value: "On"
+    },
+    {
+        option: "max_execution_time",
+        value: "240"
+    },
+    {
+        option: "max_input_vars",
+        value: "1500"
+    },
+    {
+        option: "always_populate_raw_post_data",
+        value: "-1"
+    }
+]

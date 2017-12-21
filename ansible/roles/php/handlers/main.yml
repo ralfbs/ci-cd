@@ -1,0 +1,9 @@
+
+---
+- name: link alternatives
+  file:
+    dest: "/etc/alternatives/php"
+    src: "/usr/bin/php{{ php_version }}"
+    state: link
+    force: yes
+

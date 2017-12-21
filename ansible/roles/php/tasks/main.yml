@@ -1,0 +1,16 @@
+
+# https://github.com/heybigname/ansible/blob/master/tasks/php.yml
+- name: PHP | Install Ondrej PHP PPA
+  apt_repository: repo='ppa:ondrej/php' update_cache=yes
+
+- name: "install apache2 mod_php{{ php_version }}"
+  apt:
+    pkg: "libapache2-mod-php{{ php_version }}"
+    state: latest
+    update_cache: yes
+  notify: link alternatives
+
+
+
+
+
