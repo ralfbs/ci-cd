@@ -28,5 +28,10 @@
   args:
     creates: ~/.ssh/id_rsa
 
-
-
+- name: run ssh-keyscan to add keys to known_hosts
+  lineinfile:
+    dest: /home/vagrant/.ssh/known_hosts
+    create: yes
+    state: present
+    line: "{{ lookup('pipe', 'ssh-keyscan -t rsa {{ item }} ') }}"
+  with_items: "{{ ssh_known_hosts }}"

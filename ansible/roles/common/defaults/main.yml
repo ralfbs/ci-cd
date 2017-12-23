@@ -5,3 +5,5 @@ common_packages:
   - curl
   - zip
   - ntp
+
+ssh_known_hosts: []
