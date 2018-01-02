@@ -13,7 +13,7 @@ mysql_root_password: root
 
 # Databases.
 mysql_databases:
-  - name: "{{ typo3_database_name }}"
+  - name: "vagrant"
     collation: utf8_general_ci
     encoding: utf8
     replicate: 1

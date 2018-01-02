@@ -1,22 +1,34 @@
-# TDD / CI / CD - Demonstration Stack
+TDD / CI / CD - Demonstration Stack
+===================================
 
 Author: Ralf Schneider
 
+Dies Repository enthält Beispieldaten zur Demonstration eines CI/CD Stacks.
 
-- lokalen dev Rechner provisionieren
-`vagrant up dev`
-`vagrant ssh dev`
-`ansible-playbook /vagrant/ansible/vagrant.yml -c local`
+
+dev Rechner provisionieren
+--------------------------
+```
+vagrant up dev
+vagrant ssh dev
+// ansible-playbook /vagrant/ansible/vagrant.yml -c local
+```
+
+- MailHog abrufen: http://10.100.198.200:8025
+
 
 # Beispielprojekt 
 
 `git clone https://gitlab.com/gitlab-examples/php src`
 
 
-# gitlab
-`vagrant up gitlab`
-`vagrant ssh dev`
-`ansible-playbook /vagrant/ansible/gitlab.yml -i /vagrant/ansible/hosts/prod`
+gitlab
+------
+```
+vagrant up gitlab
+vagrant ssh dev
+ansible-playbook /vagrant/ansible/gitlab.yml -i /vagrant/ansible/hosts/prod
+```
 
 in /etc/hosts:
 `10.100.198.203	gitlab`
