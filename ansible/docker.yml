@@ -3,3 +3,11 @@
   roles:
     - role: geerlingguy.docker
   become: true
+
+  tasks:
+    - name: vagrant user is added to the docker group
+      user:
+        name: vagrant
+        group: docker
+      register: user_result
+      tags: [docker]
