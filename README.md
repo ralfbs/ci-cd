@@ -50,6 +50,9 @@ Deployer
 
 `vendor/bin/dep init`
 
+* Anpassen: 
+Siehe `/dist/deploy`
+
 * Prod Server: git installieren:
 
 `ansible-playbook ansible/prod.yml  -i ansible/hosts/prod`
