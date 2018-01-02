@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<project name="CI-CD Build" default="build">
+
+
+    <property name="basedir" value="."/>
+    <property name="vendor.dir" value="vendor"/>
+    <property name="build.out.dir" value="${basedir}/build"/>
+
+    <php expression="include('vendor/autoload.php')"/>
+
+    <target name="build" depends="test-phpunit"></target>
+
+    <target name="test-phpunit">
+        <exec command="./web/typo3/cli_dispatch.phpsh phpunit" passthru="true"/>
+    </target>
+
+
+</project>
