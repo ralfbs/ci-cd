@@ -8,6 +8,10 @@ Author: Ralf Schneider
 `vagrant ssh dev`
 `ansible-playbook /vagrant/ansible/vagrant.yml -c local`
 
+# Beispielprojekt 
+
+`git clone https://gitlab.com/gitlab-examples/php src`
+
 
 # gitlab
 `vagrant up gitlab`

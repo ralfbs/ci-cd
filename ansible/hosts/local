@@ -7,3 +7,12 @@ ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key
 
 [local:children]
 vagrantbox
+
+[prod]
+10.100.198.201
+
+[gitlab]
+10.100.198.203
+
+[jenkins:children]
+gitlab

@@ -1,4 +1,4 @@
-php_version: 5.6
+php_version: 7.0
 
 php_memory_limit: "512M"
 php_max_execution_time: "240"
@@ -29,7 +29,6 @@ php_packages:
   - php{{php_version}}-mbstring
   - php{{php_version}}-zip
   - php{{php_version}}-soap
-  - php{{ php_version }}-imagick
 
 php_mysql_package: php{{php_version}}-mysql
 

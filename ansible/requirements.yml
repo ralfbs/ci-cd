@@ -7,4 +7,5 @@
 - src: geerlingguy.composer
 - src: geerlingguy.mailhog
 - src: geerlingguy.gitlab
+- src: geerlingguy.jenkins
 - src: tersmitten.ssh-keys
