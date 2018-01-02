@@ -16,8 +16,16 @@ vagrant ssh dev
 
 - MailHog abrufen: http://10.100.198.200:8025
 
+### PhpUnit Beispiel
+https://phpunit.de/getting-started-with-phpunit.html
 
-# Beispielprojekt 
+```
+// .bashrc
+PATH=$PATH:/vagrant/vendor/bin
+export PATH
+```
+
+### Beispielprojekt 
 
 `git clone https://gitlab.com/gitlab-examples/php src`
 
@@ -27,13 +35,18 @@ gitlab
 ```
 vagrant up gitlab
 vagrant ssh dev
-ansible-playbook /vagrant/ansible/gitlab.yml -i /vagrant/ansible/hosts/prod
+ansible-playbook /vagrant/ansible/gitlab.yml
 ```
+
+- ssh Key - wird später auch für Zugriff auf Prod benötigt
+`ssh-keygen -t rsa -C "ralf.schneiderl@vagrant" -b 4096`
+`cat ~/.ssh/id_rsa.pub`
+
 
 in /etc/hosts:
 `10.100.198.203	gitlab`
 
-- Login Details
+- https://gitlab/user/signin
 * user: root
 * password: password
 
@@ -41,9 +54,6 @@ in /etc/hosts:
 `sudo gitlab-ctl restart`
 `sudo gitlab-rake gitlab:check`
 
--  ssh Key
-`ssh-keygen -t rsa -C "your.email@example.com" -b 4096`
-`cat ~/.ssh/id_rsa.pub`
 
 - Git
 `git remote set-url origin git@gitlab:root/my-project.git`
@@ -67,4 +77,4 @@ Siehe `/dist/deploy`
 
 * Prod Server: git installieren:
 
-`ansible-playbook ansible/prod.yml  -i ansible/hosts/prod`
+`ansible-playbook ansible/prod.yml`
