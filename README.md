@@ -25,6 +25,24 @@ PATH=$PATH:/vagrant/vendor/bin
 export PATH
 ```
 
+### PhpUnit in Docker
+
+regulären Container aufrufen
+```
+docker run --rm \
+-v $(pwd):/opt \
+php:7.0-cli \
+/opt/vendor/bin/phpunit -c /opt/phpunit.xml
+```
+
+mit PhpUnit Container
+`docker run -v $(pwd):/app --rm phpunit/phpunit Tests`
+
+oder:
+
+`docker run -v $(pwd):/app --rm phpunit/phpunit -c phpunit.xml`
+
+
 ### Beispielprojekt 
 
 `git clone https://gitlab.com/gitlab-examples/php src`
