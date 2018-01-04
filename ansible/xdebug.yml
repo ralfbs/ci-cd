@@ -1,0 +1,6 @@
+---
+- hosts: vagrantbox
+  roles:
+    - geerlingguy.php-xdebug
+
+  become: yes

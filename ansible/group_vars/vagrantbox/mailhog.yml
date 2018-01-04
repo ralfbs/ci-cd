@@ -1,2 +1,3 @@
 ---
+mailhog_install_dir: /opt/mailhog
 php_sendmail_path: "{{ mailhog_install_dir }}/mhsendmail"
