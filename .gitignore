@@ -1,6 +1,11 @@
 .idea
-.vagrant
-ansible/**/*.retry
-src/
-prod/
-vendor/
+/.vagrant
+/ansible/**/*.retry
+/Application/
+/build/
+/src/
+/Tests
+/prod/
+/vendor/
+/composer.*
+/phpunit.xml
