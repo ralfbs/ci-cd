@@ -1,7 +1,7 @@
 .idea
 /.vagrant
 /ansible/**/*.retry
-/Application/*
+/Application/
 /build/
 /src/
 /Tests

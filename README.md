@@ -3,7 +3,10 @@ TDD / CI / CD - Demonstration Stack
 
 Author: Ralf Schneider
 
-Dies Repository enthält Beispieldaten zur Demonstration eines CI/CD Stacks.
+Dies Repository enthält Beispieldaten sowie einen technischen Stack zu Schulungszwecken der Themen:
+- Test Driven Development (TDD)
+- Continuous Integration (CI)
+- Continuous Delivery (CD)
 
 
 dev Rechner provisionieren
