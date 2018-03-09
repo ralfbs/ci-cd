@@ -21,12 +21,12 @@ class UserController
 
     public function resetPasswordAction()
     {
-
         if (!isset($_POST['email'])) {
             return new ErrorView('resetPassword', 'Keine E-Mail');
         }
 
-        $db = new PDO(Config::get('dsn'));
+        $dsn = Config::get('dsn');
+        $db = new PDO($dsn);
 
         $stmt = $db->prepare('SELECT * FROM Users WHERE email=:email');
         $stmt->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
@@ -47,6 +47,5 @@ class UserController
         mail($_POST['email'], 'Reset Password', 'Confirmation Code: ' . $code);
 
         return new View('PasswordResetRequested');
-
     }
 }

@@ -17,7 +17,7 @@ namespace Application;
  */
 class ErrorView extends View
 {
-    protected $errorMessage;
+    public $errorMessage;
 
     public function __construct($viewScript, $errorMessage)
     {
